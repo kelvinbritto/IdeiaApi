@@ -1,13 +1,13 @@
 async function tempo(request, response) {
     const dynamicDate = new Date();
 
-    const aulaAgora = await fetch("http://192.168.15.136:8081/aovivo");
-    const aulaAgoraJson = await aulaAgora.json();
-    const aula = aulaAgoraJson.aula;
+    const rua = await fetch("https://brasilapi.com.br/api/cep/v1/02543000");
+    const ruaJson = await aulaAgora.json();
+    const ruaString = aulaAgoraJson.aula;
 
     response.json({
         date: dynamicDate.toGMTString(),
-        aula: aula
+        rua: ruaString
     })
 }
 
